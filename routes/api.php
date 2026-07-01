@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 
+
+use App\Http\Controllers\TaskController;
+
 use Illuminate\Support\Facades\Route;
 
 // Notre toute première route API !
@@ -21,3 +24,7 @@ Route::get('/user-test', function () {
         'competences' => 'Laravel, Next.js, React, Vue.js, Node.js, Express.js'
     ]);
 });
+
+
+
+Route::apiResource('tasks', TaskController::class);
