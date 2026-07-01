@@ -1,25 +1,19 @@
 <?php
-
 namespace Database\Seeders;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Crée un utilisateur de test par défaut
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Ali',
+            'email' => 'ali2@example.com',
+            'password' => bcrypt('password123'), // Mot de passe crypté
         ]);
     }
 }
